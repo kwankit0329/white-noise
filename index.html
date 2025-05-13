@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sound Alchemy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Sound Alchemy</h1>
+  
+  <div class="bottles">
+    <button class="bottle" data-sound="rain" style="--color: #5aa7e3">Rain</button>
+    <button class="bottle" data-sound="fire" style="--color: #f08c42">Fire</button>
+    <button class="bottle" data-sound="frogs" style="--color: #7bb36d">Frogs</button>
+    <button class="bottle" data-sound="wind" style="--color: #8eaebd">Wind</button>
+  </div>
+
+  <div class="cauldron">
+    <div id="liquid-layer"></div>
+  </div>
+
+  <button id="reset">Reset</button>
+
+  <script src="https://unpkg.com/tone@next"></script>
+  <script src="main.js"></script>
+</body>
+</html>
