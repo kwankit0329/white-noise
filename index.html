@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>White Noise Mixer</title>
+  <style>
+    body {
+      background-color: #eaf6f6;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #0077b6;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .sound-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .sound-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 220px;
+    }
+
+    .sound-box h2 {
+      margin-bottom: 10px;
+      color: #023e8a;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-size: 0.9em;
+      cursor: pointer;
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0096c7;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>White Noise Mixer</h1>
+  <p>Mix fire, wind, wave, and rain sounds to create your perfect ambient environment.</p>
+
+  <div class="sound-container">
+    <div class="sound-box">
+      <h2>Fire</h2>
+      <audio id="fire" src="sounds/fire.mp3" loop></audio>
+      <button onclick="togglePlay('fire')">Play / Pause</button>
+      <input type="range" min="0" max="1" step="0.01" value="0.5"
+             onchange="setVolume('fire', this.value)">
+    </div>
+
+    <div class="sound-box">
+      <h2>Wind</h2>
+      <audio id="wind" src="sounds/wind.mp3" loop></audio>
+      <button onclick="togglePlay('wind')">Play / Pause</button>
+      <input type="range" min="0" max="1" step="0.01" value="0.5"
+             onchange="setVolume('wind', this.value)">
+    </div>
+
+    <div class="sound-box">
+      <h2>Wave</h2>
+      <audio id="wave" src="sounds/wave.mp3" loop></audio>
+      <button onclick="togglePlay('wave')">Play / Pause</button>
+      <input type="range" min="0" max="1" step="0.01" value="0.5"
+             onchange="setVolume('wave', this.value)">
+    </div>
+
+    <div class="sound-box">
+      <h2>Rain</h2>
+      <audio id="rain" src="sounds/rain.mp3" loop></audio>
+      <button onclick="togglePlay('rain')">Play / Pause</button>
+      <input type="range" min="0" max="1" step="0.01" value="0.5"
+             onchange="setVolume('rain', this.value)">
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 White Noise Mixer. All rights reserved.
+  </footer>
+
+  <script>
+    function togglePlay(id) {
+      const audio = document.getElementById(id);
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function setVolume(id, value) {
+      const audio = document.getElementById(id);
+      audio.volume = value;
+    }
+  </script>
+
+</body>
+</html>
