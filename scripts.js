@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.volume = 0.5;
     });
 
-    // 播放/暂停自己，不影响其他音轨
+    // 每个按钮控制自己的音轨
     buttons.forEach(button => {
         button.addEventListener('click', function () {
             const soundId = this.getAttribute('data-sound');
@@ -32,11 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 音量控制
+    // 音量调节功能
     sliders.forEach(slider => {
         slider.addEventListener('input', function () {
             const soundId = this.getAttribute('data-sound');
-            sounds[soundId].volume = this.value;
+            const volume = parseFloat(this.value);
+            sounds[soundId].volume = volume;
         });
     });
 });
+
