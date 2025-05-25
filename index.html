@@ -1,84 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>白噪音放松站</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Simple Audio Player</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>白噪音放松站</h1>
-            <p>选择你喜欢的环境声音，调节到舒适的音量</p>
-        </header>
-        
-        <main>
-            <div class="sound-grid">
-                <!-- 火声 -->
-                <div class="sound-card">
-                    <div class="sound-icon fire"></div>
-                    <h3>篝火声</h3>
-                    <button class="play-btn" data-sound="fire">播放</button>
-                    <div class="volume-control">
-                        <span class="volume-icon">🔈</span>
-                        <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5" data-sound="fire">
-                    </div>
-                    <audio id="fire" loop>
-                        <source src="fire.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                
-                <!-- 雨声 -->
-                <div class="sound-card">
-                    <div class="sound-icon rain"></div>
-                    <h3>雨声</h3>
-                    <button class="play-btn" data-sound="rain">播放</button>
-                    <div class="volume-control">
-                        <span class="volume-icon">🔈</span>
-                        <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5" data-sound="rain">
-                    </div>
-                    <audio id="rain" loop>
-                        <source src="rain.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                
-                <!-- 海浪声 -->
-                <div class="sound-card">
-                    <div class="sound-icon wave"></div>
-                    <h3>海浪声</h3>
-                    <button class="play-btn" data-sound="wave">播放</button>
-                    <div class="volume-control">
-                        <span class="volume-icon">🔈</span>
-                        <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5" data-sound="wave">
-                    </div>
-                    <audio id="wave" loop>
-                        <source src="wave.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                
-                <!-- 风声 -->
-                <div class="sound-card">
-                    <div class="sound-icon wind"></div>
-                    <h3>风声</h3>
-                    <button class="play-btn" data-sound="wind">播放</button>
-                    <div class="volume-control">
-                        <span class="volume-icon">🔈</span>
-                        <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5" data-sound="wind">
-                    </div>
-                    <audio id="wind" loop>
-                        <source src="wind.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-            </div>
-        </main>
-        
-        <footer>
-            <p>© 2023 白噪音放松站 | 使用HTML, CSS和JavaScript构建</p>
-        </footer>
-    </div>
-    
-    <script src="scripts.js"></script>
+
+  <h1>White Noise Player</h1>
+
+  <p>Fire</p>
+  <audio controls loop>
+    <source src="sounds/fire.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <p>Wind</p>
+  <audio controls loop>
+    <source src="sounds/wind.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <p>Wave</p>
+  <audio controls loop>
+    <source src="sounds/wave.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <p>Rain</p>
+  <audio controls loop>
+    <source src="sounds/rain.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
 </body>
 </html>
